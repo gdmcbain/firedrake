@@ -1,7 +1,7 @@
 Obtaining Firedrake
 ===================
 
-Firedrake depends on PyOP2_, FFC_, FIAT_, and UFL_. It is easiest to obtain
+Firedrake depends on PyOP2_, FIAT_, UFL_, and MFCC_. It is easiest to obtain
 all of these components on Ubuntu Linux and related distributions such as Mint
 or Debian. Installation on other Unix-like operating systems is likely to be
 possible, although harder. Installation on a Mac is straightforward using the
@@ -14,30 +14,21 @@ Instructions for obtaining PyOP2_ and its dependencies are at
 :doc:`obtaining_pyop2`. Note that PyOP2_ is updated frequently and Firedrake
 requires an up-to-date version.
 
-FFC, FIAT and UFL
+MFFC, FIAT and UFL
 -----------------
 
-Firedrake currently requires a fork of FFC_, UFL_ and FIAT_.  Note that FFC_
-requires a version of Instant_.
-
-FFC_ currently depends on Swig_, which you can install from
-package. On Ubuntu and relatives type::
-
-  sudo apt-get install swig
-
-while on Mac OS it's::
-
-  brew install swig
+Firedrake currently requires particular branches of UFL_ and
+FIAT_. MFFC_ is a fork of FFC_ but has been renamed so that there is
+no problem with having both versions installed at once.
 
 Install FFC_ and all dependencies via pip::
 
   sudo pip install \
     six \
     sympy \
-    git+https://bitbucket.org/mapdes/ffc.git#egg=ffc \
+    git+https://bitbucket.org/mapdes/mffc.git#egg=mffc \
     git+https://bitbucket.org/mapdes/ufl.git#egg=ufl \
-    git+https://bitbucket.org/mapdes/fiat.git#egg=fiat \
-    git+https://bitbucket.org/fenics-project/instant.git#egg=instant
+    git+https://bitbucket.org/mapdes/fiat.git#egg=fiat 
 
 These dependencies are regularly updated. If you already have the packages
 installed and want to upgrade to the latest versions, do the following::
@@ -52,10 +43,10 @@ modify the pip invocation for either case above as follows::
 Potential installation errors on Mac OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The installation of FFC_ requires a C++11 compatible compiler and
+The installation of MFFC_ requires a C++11 compatible compiler and
 standard library, some Mac OS systems (for example OS X "Lion")
 supply the former, but not the latter.  Should you obtain errors
-installing FFC_ of the following form:
+installing MFFC_ of the following form:
 
 .. code-block:: c
 
@@ -200,12 +191,11 @@ Finally install the Bibtex plugin::
   sudo pip install sphinxcontrib-bibtex
 
 .. _PyOP2: http://op2.github.io/PyOP2
-.. _FFC: https://bitbucket.org/mapdes/ffc
+.. _FFC: https://bitbucket.org/fenics-project/ffc
+.. _MFFC: https://bitbucket.org/mapdes/ffc
 .. _FIAT: https://bitbucket.org/mapdes/fiat
 .. _UFL: https://bitbucket.org/mapdes/ufl
-.. _Instant: https://bitbucket.org/fenics-project/instant
 .. _GitHub: https://github.com/firedrakeproject/firedrake
 .. _Paraview: http://www.paraview.org
 .. _Sphinx: http://www.sphinx-doc.org
 .. _wget: http://www.gnu.org/software/wget/
-.. _Swig: http://www.swig.org/
